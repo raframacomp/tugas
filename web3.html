@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Tentang Saya - Hobi dan Cita-Cita</title>
+    <body background="brnabeujpg.jpg">
+    <!-- Watermark -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Watermark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .watermark {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 1
+            z-index: 0;
+            pointer-events: none;
+            text-transform: uppercase;
+            text-align: right;
+            line-height: 1;
+        }
+        
+        .watermark span {
+            display: block;
+            font-size: 18px;
+        }
+        
+        .watermark .name {
+            font-size: 24px;
+            margin-top: 2px;
+        }
+        
+        .content {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark">
+        <span>Website</span>
+        <span class="name">Ferdiaz</span>
+    </div>
+    
+
+<!-- Music Button -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Button</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .music-player-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .music-toggle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .music-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .music-toggle-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle-btn.playing::after {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .music-toggle-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        #audio-player {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-player-container">
+        <button class="music-toggle-btn" id="music-btn">
+            <span class="tooltip">Toggle Music</span>
+            ♫
+        </button>
+        <audio id="audio-player" loop>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        const musicBtn = document.getElementById('music-btn');
+        const audioPlayer = document.getElementById('audio-player');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                this.classList.remove('playing');
+            } else {
+                audioPlayer.play();
+                this.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Kode untuk mempause musik kalo lagi pindah page
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    musicBtn.classList.remove('playing');
+                }
+            } else {
+                if (isPlaying) {
+                    audioPlayer.play();
+                    musicBtn.classList.add('playing');
+                }
+            }
+        });
+
+        // Kalo kode nya error/lagu tidak ditwmukan
+        audioPlayer.addEventListener('error', function() {
+            alert('Error loading audio file. Please check the audio file path.');
+            musicBtn.classList.remove('playing');
+            isPlaying = false;
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --text-color: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 2rem 0 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .hobby-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hobby-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .dreams-section {
+            background: white;
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hobi dan Cita cita saya</h1>
+            
+        </header>
+
+        <div class="profile-card fade-in">
+            <img src="ganteng.jpeg" alt="Foto profil seseorang tersenyum dengan latar belakang alam yang cerah dan pepohonan hijau" class="profile-image">
+            <h2>Halo Nama Saya Ferdiaz</h2>
+            <p>Selamat datang di page cerita pribadi saya. Berisi tentang cita cita dan hobi saya.</p>
+        </div>
+
+        <section class="section fade-in">
+            <h2>Hobi Saya</h2>
+            <p>Semua orang ya udah pasi punya hobi gak sih. Nah berikut ini adalah beberapa hobi yang saya minati cusss:</p>
+
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <img src="basket.jpeg" alt="Bermain basket dan berlari" class="hobby-image">
+                    <h3>Berolahraga</h3>
+                    <p>Sejak kecil, saya memang sudah suka melakukan aktivitas yang membuat tubuh bergerak. Olahraga yang paling sering saya lakukan adalah bermain basket dan berlari. Saat bermain basket, saya bisa merasakan serunya bekerja sama dengan teman satu tim, berstrategi, dan berusaha mencetak poin. Rasanya ada kepuasan tersendiri ketika bisa bermain dengan baik dan kompak. Sedangkan ketika berlari, saya merasa lebih bebas karena bisa sekaligus melatih daya tahan tubuh dan menenangkan pikiran. Dari kedua kegiatan itu, saya belajar bahwa olahraga bukan hanya soal fisik, tapi juga soal membangun semangat, disiplin, dan pola hidup sehat.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <img src="belajar.jpeg" alt="Belajar pemrograman" class="hobby-image">
+                    <h3>Belajar pemrograman secara otodidak </h3>
+                    <p>Ketertarikan saya pada komputer sudah muncul sejak masih kecil. Saya sering penasaran dengan bagaimana sebuah program bisa berjalan, bagaimana aplikasi bisa dibuat, dan bagaimana komputer bisa melakukan begitu banyak hal yang canggih. Dari rasa penasaran itu, saya mulai mencoba belajar secara otodidak. Saya suka mengutak-atik komputer, membaca referensi, menonton tutorial, dan mencoba berbagai hal baru. Meskipun kadang menemukan kesulitan atau error yang membingungkan, saya justru semakin bersemangat untuk mencari tahu solusinya. Hal itu membuat saya sadar kalau dunia pemrograman sangat seru, karena selain menantang juga selalu ada hal baru untuk dipelajari.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <img src="pergi.jpeg" alt="Travelling" class="hobby-image">
+                    <h3>Berpergian jauh</h3>
+                    <p>Biasanya, saya suka pergi ke kota lain atau ke alam terbuka hanya untuk sekadar healing dan menikmati suasana baru. Bagi saya, travelling bukan hanya tentang jalan-jalan, tapi juga cara untuk menyegarkan pikiran, melepaskan penat, dan melihat dunia dari sudut pandang yang berbeda. Saat berpergian, saya merasa bisa menemukan ketenangan sekaligus pengalaman baru yang tidak bisa saya dapatkan di tempat biasa saya tinggal. Melihat pemandangan indah, suasana baru, dan bertemu orang-orang yang berbeda selalu memberi kesan tersendiri dan membuat saya semakin menghargai perjalanan hidup.
+</p>
+                </div>
+
+                <div class="hobby-card">
+                    <img src="masak.jpeg" alt="masak" class="hobby-image">
+                    <h3>Memasak</h3>
+                    <p>Sejak kecil saya sudah terbiasa mandiri, sehingga memasak jadi salah satu kegiatan yang akhirnya sangat saya sukai. Awalnya memang sekadar karena kebutuhan, tapi lama-lama saya benar-benar menikmatinya. Saya suka bereksperimen dengan berbagai resep, bahkan terkadang menciptakan resep unik yang mungkin hanya saya sendiri yang suka. Namun, dari situlah letak keseruannya, karena memasak bagi saya bukan hanya tentang rasa, tetapi juga tentang kreativitas, mencoba hal-hal baru, dan merasa puas ketika berhasil menyajikan sesuatu dari tangan sendiri.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dreams-section fade-in">
+            <h2>Cita-Cita dan Impian Saya</h2>
+            <p>Setiap langkah yang saya ambil hari ini adalah investasi untuk masa depan yang lebih baik. Berikut adalah cita-cita yang ingin saya wujudkan:</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Menjadi Programmer dan Game Developer
+                    <p>Saya ingin menjadi seorang programmer, developer, atau bahkan game developer. Cita-cita ini tidak datang begitu saja, tapi terinspirasi dari beberapa konten YouTube yang sering saya tonton. Dari sana saya jadi semakin tahu bahwa dunia pemrograman dan pengembangan aplikasi itu sangat luas dan penuh peluang. Saya merasa cita-cita ini pas banget dengan hobi dan minat saya sejak kecil, yaitu suka mengutak-atik komputer dan belajar hal-hal baru secara mandiri.
+
+Ke depan, saya ingin bisa membuat sesuatu yang bermanfaat lewat kemampuan saya di bidang teknologi. Misalnya, menciptakan aplikasi yang bisa membantu orang lain, atau membuat game yang tidak hanya seru dimainkan, tapi juga memberikan pengalaman dan nilai positif.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Membangun proyek game terbesar saya
+                    <p>Impian saya adalah saya ingin membuat sebuah proyek game terbesar buatan saya sendiri. Sejak lama saya sudah punya impian untuk menciptakan game yang bukan hanya sekadar hiburan, tapi juga memberikan pengalaman menarik bagi para pemainnya. Saya ingin game tersebut bisa menjadi karya yang membanggakan dan dikenal luas.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Berkeliling Dunia
+                    <p>Saya memiliki cita-cita untuk bisa mengeksplorasi dan mengunjungi banyak tempat indah di dunia. Saya ingin merasakan langsung keindahan alam, budaya, dan suasana dari berbagai daerah bahkan negara. Dengan begitu, saya bisa memperluas pengalaman, menambah wawasan, sekaligus membawa cerita baru dari setiap perjalanan.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Membahagiakan Orang Tua
+                    <p>Cita-cita saya adalah ingin membahagiakan dan membanggakan orang tua serta orang-orang terdekat saya. Bagi saya, kesuksesan bukan hanya tentang pencapaian pribadi, tapi juga tentang bisa memberikan kebahagiaan untuk orang yang saya sayangi. Saya ingin suatu saat nanti hasil kerja keras saya bisa membuat mereka tersenyum, merasa bangga, dan melihat bahwa perjuangan mereka mendidik serta mendukung saya tidak sia-sia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <h2>Visi dan Misi Hidup</h2>
+            <p>Setiap hari saya berusaha untuk belajar sesuatu yang baru dan menjadi versi terbaik dari diri sendiri. Saya percaya bahwa konsistensi dan passion adalah kunci untuk mencapai impian.</p>
+            <br>
+            <p>Visi
+                <br>
+
+Menjadi pribadi yang kreatif, mandiri, dan bermanfaat melalui hobi serta passion saya, dengan mewujudkan karya besar di bidang teknologi khususnya game, sekaligus terus mengeksplorasi dunia untuk mendapatkan pengalaman dan inspirasi baru, serta membahagiakan orang-orang terdekat.
+
+<br>
+<br>
+
+Misi
+<br>
+
+1. Mengembangkan kemampuan diri dalam bidang pemrograman dan game development agar dapat menciptakan proyek game besar yang orisinal, menarik, dan bermanfaat.
+<br>
+
+2. Menjadikan travelling sebagai sarana belajar dan inspirasi, dengan mengeksplorasi tempat-tempat indah, memahami budaya baru, dan menghargai keanekaragaman dunia.
+<br>
+
+3. Mengasah kemandirian dan kreativitas melalui memasak, dengan terus berani mencoba resep-resep baru dan menjadikan memasak sebagai bagian dari gaya hidup sehat dan menyenangkan.
+<br>
+
+4. Menjaga konsistensi, semangat, dan disiplin, baik dalam belajar maupun berkarya, agar cita-cita bisa tercapai secara bertahap.
+<br>
+
+5. Membahagiakan dan membanggakan orang tua serta orang-orang terdekat, dengan hasil kerja keras, sikap yang baik, dan keberhasilan yang diraih di masa depan.</p>
+        </section>
+
+        <footer>
+            <p><!-- Tombol untuk kembali ke page 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Back Button</title>
+    <style>
+        .back-btn-container {
+            margin: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 16px;
+            background-color: #f8f9fa;
+            color: #212529;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .back-button:hover {
+            background-color: #e9ecef;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .back-button:active {
+            transform: translateY(0);
+        }
+        
+        .back-button svg {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-btn-container">
+        <a href="web2.html" class="back-button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Kembali ke page sebelumnya
+        </a>
+    </div>
+
+
+      <!-- Tombol untuk menuju page 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Button</title>
+    <style>
+    
+        .nav-btn-container {
+            margin: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .next-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 16px;
+            background-color: #f8f9fa;
+            color: #212529;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .next-button:hover {
+            background-color: #e9ecef;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .next-button:active {
+            transform: translateY(0);
+        }
+        
+        .next-button svg {
+            margin-left: 8px;
+            width: 16px;
+            height: 16px;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-btn-container">
+        <a href="web4.html" class="next-button">
+            Lanjut ke page selanjutnya
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div></p>
+        </footer>
+    </div>
+
+    <script>
+        // Animasi fade-in saat scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Efek hover untuk cards
+            const cards = document.querySelectorAll('.hobby-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.boxShadow = 'var(--shadow)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

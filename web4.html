@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Ferdiaz Page 4</title>
+    <body background="brnabeujpg.jpg"></body>
+    <style>
+        :root {
+            --primary-color: #4a6b8a;
+            --secondary-color: #e8c547;
+            --dark-color: #30323d;
+            --light-color: #f5f5f5;
+            --accent-color: #e15554;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .story-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .story-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .card-text {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery Ferdiaz</h1>
+        <p class="subtitle">Gallery Ferdiaz dengan cerita disetiap foto</p>
+    </header>
+
+
+<!-- Watermark -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Watermark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .watermark {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 1
+            z-index: 0;
+            pointer-events: none;
+            text-transform: uppercase;
+            text-align: right;
+            line-height: 1;
+        }
+        
+        .watermark span {
+            display: block;
+            font-size: 18px;
+        }
+        
+        .watermark .name {
+            font-size: 24px;
+            margin-top: 2px;
+        }
+        
+        .content {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark">
+        <span>Website</span>
+        <span class="name">Ferdiaz</span>
+    </div>
+    
+    <!-- Music Button -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Button</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .music-player-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .music-toggle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .music-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .music-toggle-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle-btn.playing::after {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .music-toggle-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        #audio-player {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-player-container">
+        <button class="music-toggle-btn" id="music-btn">
+            <span class="tooltip">Toggle Music</span>
+            ♫
+        </button>
+        <audio id="audio-player" loop>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        const musicBtn = document.getElementById('music-btn');
+        const audioPlayer = document.getElementById('audio-player');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                this.classList.remove('playing');
+            } else {
+                audioPlayer.play();
+                this.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Kode untuk mempause musik kalo lagi pindah page
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    musicBtn.classList.remove('playing');
+                }
+            } else {
+                if (isPlaying) {
+                    audioPlayer.play();
+                    musicBtn.classList.add('playing');
+                }
+            }
+        });
+
+        // Kalo kode nya error/lagu tidak ditwmukan
+        audioPlayer.addEventListener('error', function() {
+            alert('Error loading audio file. Please check the audio file path.');
+            musicBtn.classList.remove('playing');
+            isPlaying = false;
+        });
+    </script>
+    
+    <main class="gallery-container">
+        <!-- Story Card 1 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 1 (waterboom).jpeg" alt="Kenangan Di Waterboom Saat Kecil" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Bermain Air Saat Kecil</h2>
+                <p class="card-text">Foto ini saya tidak ingat kapan kejadiannya dan seperti apa kejadian sebenarnya yang terjadi di foto itu, tetapi yang saya ingat waktu itu hanya keluarga kecil saya (ibu saya, abang saya) dan teman ibu saya, saat itu terasa menyenangkan sekali karena itu pengalaman sadar saya pertama kali bermain air dan bermacam macam wahana.</p>
+            </div>
+        </div>
+        
+        <!-- Story Card 2 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 2 (perpustakaan jakarta).jpeg" alt="Perpustakaan Jakarta" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Perpustakaan Jakarta</h2>
+                <p class="card-text"> Foto ini saat dimana saya dan kedua teman saya Rafael dan Nino pergi ke sebuah perpustakaan di jakarta untuk mencari bahan pembelajaran ujian akhir kelas 11, namun ada banyak cerita dibalik itu semua. Cerita ini pada saat bulan ramadhn dan awalnya kami berniat untuk mengunjungi perpustakaan nasional, tapi kami baru berangkat di jam 3 sore dari bekasi yang membutuhkan perjalanan ke tempat tersebut kurang lebih 1 jam, dan perpustakaan tersebut tutup pada jam 3 lebih sedikit, alhasil kami mencari alternatif perpustakaan yang tidak jauh dari tujuan awal kita, dan setelah ketemu perpustakaan tersebut kami segera belajar sampai perpustakaan tutup, dan setelah perpustkaan tutup kami berniat ingin buka bersama dan lalu kami pergi menuju mall untuk mencari restoran lalu segera berbuka puasa, setelah berbuka puasa kami bertiga memutuskan berjalan jalan berkeliling jakarta dan akhirnya pulang.</p>
+            </div>
+        </div>
+        
+        <!-- Story Card 3 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 3 (mudik).jpeg" alt="Ke Tegal saat lebaran" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Mudik Lebaran</h2>
+                <p class="card-text">Foto ini menceritakan pengalaman mudik saya setelah 4 tahun tidak pulang, rasanya menyenangkan sekali bisa bertemu dengan saudara saudara saya disana, dengan suasana yang serba tradisional, lingkungan yang asik, saya sangat menikmati 2 minggu saya di kampung saya.</p>
+            </div>
+        </div>
+        
+        <!-- Story Card 4 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 4(gowes ke monas).jpeg" alt="Bersepeda Ke Monas" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Bersepeda ke Monas</h2>
+                <p class="card-text">Foto ini menceritakan saya dan Nino yang memulai rencana atau planning untuk bersepeda pada hari weekend, awalnya ingin tanpa tujuan namun saya mengemukakan saran untuk bersepeda ke monas, awalnya kita menganggap itu gila tapi akhirnya jadi juga, singkat cerita kami berhasil menempuh jarak dari bekasi ke monas modal bersepeda, pada awalnya tidak terlalu berat, kami di monas menikmati bekal yang kami bawa dari rumah dan foto foto di monas, sampai titik beratnya terjadi saat perjalanan pulang. Semuanya terasa berat dan melelahkan, tapi walaupun begitu ini sangat menyenangkan bisa menghabiskan waktu bersama sekaligus berolahraga.</p>
+            </div>
+        </div>
+
+        <!-- Story Card 5 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 5(pondok pesantren).jpeg" alt="Nemenin Abang" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Menemani ke Pondok Pesantren</h2>
+                <p class="card-text">Foto ini merupakan foto paling singkat ceritanya karena saya agak lupa dengan kejadiannya, inti pada foto ini hanya menemani abang saya masuk ke pesantren diatas gunung pada saat itu.</p>
+            </div>
+        </div>
+
+        <!-- Story Card 6 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 6(guciku tegal).jpeg" alt="Berlibur di Guciku Tegal" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Liburan di Guciku Tegal bersama sodara</h2>
+                <p class="card-text">Foto ini menceritakan kisah liburan sekeluarga besar saya berlibur ke guciku tegal, sebuah kolam pemandian air panas umum dengan banyak wahana air, sangat menyenangkan apalagi saat itu saya masih kecil sekali jadi setiap momen terasa menyenangkan bagi saya.</p>
+            </div>
+        </div>
+
+         <!-- Story Card 7 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 7(nganter paket).jpeg" alt="Kerja" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Kerja sebagai kurir untuk pendapatan lebih</h2>
+                <p class="card-text">Foto ini adalah salah satu foto yang diambil disaat saya sedang mengantar paket, tidak hanya mengantar paket namun kebanyakan mengantar makanan pelanggan, memang melelahkan dan sedikit menguras mental dan tenaga apalagi dibawah terik matahari dan foto itu diambil pada saat saya menunaikan ibadah puasa ramadhan, hasilnya memang lumayan untuk jajan dan keseharian saya, namun akhir akhir ini saya kesulitan membagi waktu apalagi sudah kelas 12 jadi sangat jarang untuk mencari pelanggan lagi karena terhalang waktu dan kesibukan lain.</p>
+            </div>
+        </div>
+
+         <!-- Story Card 8 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 8(gabut ke jakarta nyari koin).jpeg" alt="Koin Jakarta" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Jakarta mencari koin</h2>
+                <p class="card-text">Foto ini bersama dengan teman smp saya Putra, kami memang sering sekali keliling jakarta tanpa tujuan, singkat cerita kami sama sama bosan dihari libur maka dari itu putra memutuskan untuk hunting koin di jakarta dengan tujuan senang senang saja, kami berdua memutuskan nekat ke jakarta dengan tidak membawa apa apa dan hanya bertujuan senang senang cari koin, sampai disana pun kami full jalan kaki untuk mencari koin selama seharian penuh, setelah merasa lelah dan puas kami memutuskan untuk pulang.</p>
+            </div>
+        </div>
+
+         <!-- Story Card 9 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 10(bosan dan pergi ke tegal sendirian).jpeg" alt="Mudik sendirian" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Mudik sendiri</h2>
+                <p class="card-text">Mudik tahun lalu saya merasa sangat bosan sekali karena tidak melakukan apa apa, lalu saya teringat dengan ajakan saudara saya di tegal yang menyuruh saya main ke tegal sendirian. Aku pun menyetujui itu dan merencanakan pergi ke tegal sendirian, berhubung saya pun masih memiliki cukup uang untuk mudik karena saya menabung tanpa tujuan dan bingung uang itu akan di kemanakan maka saya putuskan untuk ke tegal sendirian, sampai disana saya disambut baik oleh saudara saya, saya menginap di rumah saudara saya dan kemudian keesokan hari nya saya pergi ke semarang bersama saudara saya untuk menikmati alam dan sekedar jalan jalan aja biar ga bosan sambil nyobain jajan di semarang.</p>
+            </div>
+        </div>
+
+         <!-- Story Card 10 -->
+        <div class="story-card">
+            <div class="card-image">
+                <img src="Foto 9(acara rimaf).jpeg" alt="Acara pesantren di masjid" />
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Panitia acara di masjid perumahan</h2>
+                <p class="card-text"> Ramadhan kemarin saya mendapatkan tugas sebagai design dan dokumentasi acara pesantren ramadhan di mesjid perumahan, banyak yang terjadi namun saya bersama partner saya berhasil membuat acara ini sukses walau ada beberapa kendala dan hambatan.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <!-- Tombol untuk kembali ke page 3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Back Button</title>
+    <style>
+        .back-btn-container {
+            margin: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 16px;
+            background-color: #f8f9fa;
+            color: #212529;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .back-button:hover {
+            background-color: #e9ecef;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .back-button:active {
+            transform: translateY(0);
+        }
+        
+        .back-button svg {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-btn-container">
+        <a href="web3.html" class="back-button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Kembali ke page sebelumnya
+        </a>
+    </div>
+    </footer>
+</body>
+</html>

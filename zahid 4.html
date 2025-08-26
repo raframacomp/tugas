@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Momen-momen Zahid</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f0ec; /* coklat muda elegan */
+      color: #3e2723; /* coklat tua */
+    }
+    header {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #8b5e3c, #3e2723); /* coklat elegan */
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .desc {
+      padding: 15px;
+      background: #faf7f4;
+    }
+    .desc p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4e342e;
+    }
+    /* Bagian tombol navigasi */
+    .nav {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .btn {
+      margin: 10px;
+      background: linear-gradient(135deg, #6d4c41, #3e2723);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #8d6e63, #4e342e);
+      transform: scale(1.07);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galeri Momen-momen Saya </h1>
+    <p>Kumpulan foto dan cerita singkat di baliknya</p>
+  </header>
+
+  <div class="gallery">
+    <!-- Gambar 1 -->
+    <div class="card">
+      <img src="foto1.jpeg" alt="Foto 1">
+      <div class="desc"><p>Ini adalah foto saya sama senior taruna saya, still parah kan? hahaha. Btw emang taruna tuh keren banget, itu yang memotivasi saya terus-terusan supaya bisa jadi salah satu bagian dari mereka. Semoga kelak bisa terwujud, aminn.</p></div>
+    </div>
+    <!-- Gambar 2 -->
+    <div class="card">
+      <img src="foto2.jpeg" alt="Foto 2">
+      <div class="desc"><p>Ini foto saya sama temen saya nih, namanya Bian. Foto ini diambil setelah acara OASIS 17 kemarin, acaranya seru banget, termasuk berkesan dalam momen masa muda saya, terutama di akhir masa SMA saya ini.</p></div>
+    </div>
+    <!-- Gambar 3 -->
+    <div class="card">
+      <img src="foto3.jpeg" alt="Foto 3">
+      <div class="desc"><p>Buat foto ini, diambil pas kemarin setelah acara Funrun 5K. Disitu saya sama temen saya namanya Westley, Itu btw bangga banget wkwkw karena emang event lari pertama kali yang saya ikutin.</p></div>
+    </div>
+    <!-- Gambar 4 -->
+   
+    <!-- Gambar 5 -->
+    <div class="card">
+      <img src="jaid 1.jpeg" alt="Foto 5">
+      <div class="desc"><p>Nahh untuk foto ini diambil setelah lomba paskib di BSI kemarin, btw jangan salfok, wanita disamping saya itu bendahara saya di PISUS, emang cantik banget sih hahaha.</p></div>
+    </div>
+    <!-- Gambar 6 -->
+    <div class="card">
+      <img src="jaid 2.jpeg" alt="Foto 6">
+      <div class="desc"><p>Buat  foto yang satu ini, itu kemarin diambil pas saya lagi ke Bromo. Disitu emang indah banget asli, Alhamdulillah pernah kesitu.</p></div>
+    </div>
+    <!-- Gambar 7 -->
+    <div class="card">
+      <img src="jaid.jpeg" alt="Foto 7">
+      <div class="desc"><p>Foto yan ini nihh kebetulan diambil pada saat GTC 2024 kemarin, ini lokasinya di Bukit Bintang Jogja. Disini emang lagi happy banget keliatannya, karena emang GTC seru banget, kacaw menn.</p></div>
+    </div>
+    <!-- Gambar 8 -->
+    <div class="card">
+      <img src="jaid 4.jpeg" alt="Foto 8">
+      <div class="desc"><p>Nahh kalo foto yang ini lagi gaya bebas, biar ga strees latihan pisus men wkwkwk.</p></div>
+    </div>
+    <!-- Gambar 9 -->
+    <div class="card">
+      <img src="jaid 3.jpeg" alt="Foto 9">
+      <div class="desc"><p>Kalo foto yang ini nihh pas kemarin lagi di Cimory Prigen, lagi begaya manah nihh ceritanya. BTW gaya bukan sekedar gaya, emang dasarnya jago ini hahahaha.</p></div>
+    </div>
+  </div>
+
+  <!-- Navigasi antar halaman -->
+  <div class="nav">
+    <button class="btn" onclick="window.location.href='Zahid.html'">Halaman Utama</button>
+    <button class="btn" onclick="window.location.href='Zahid2.html'">Halaman 2</button>
+    <button class="btn" onclick="window.location.href='Zahid3.html'">Halaman 3</button>
+    <button class="btn" onclick="window.location.href='Zahid 4.html'">Halaman 4</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Pribadi Raihan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(0,0,0,0.6);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    marquee {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffeb3b;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 120px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #page1 {
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    }
+
+    #page2 {
+      background: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    }
+
+    #page3 {
+      background: url('https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    }
+
+    #page4 {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    }
+
+    img.profile {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 600px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <marquee>Selamat Datang di Website Ini</marquee>
+    <nav>
+      <a href="#page1">Profil</a>
+      <a href="#page2">Data Diri & Hobi</a>
+      <a href="#page3">Pengalaman</a>
+      <a href="#page4">Page 4</a>
+    </nav>
+  </header>
+
+  <!-- Page 1 -->
+  <section id="page1">
+    <div class="card">
+      <img src="foto-anda.jpg" alt="Foto Profil" class="profile">
+      <h1>Raihan Raditya Ramadhan</h1>
+      <p>Selamat datang di website pribadi saya.</p>
+    </div>
+  </section>
+
+  <!-- Page 2 -->
+  <section id="page2">
+    <div class="card">
+      <h2>Data Diri</h2>
+      <p>Nama: Raihan Raditya Ramadhan</p>
+      <p>Tempat, Tanggal Lahir: [isi di sini]</p>
+      <p>Alamat: [isi di sini]</p>
+      <hr>
+      <h2>Hobi</h2>
+      <p>- Membaca</p>
+      <p>- Olahraga</p>
+      <p>- Traveling</p>
+    </div>
+  </section>
+
+  <!-- Page 3 -->
+  <section id="page3">
+    <div class="card">
+      <h2>Pengalaman Hidup</h2>
+      <img src="foto-pengalaman.jpg" alt="Foto Pengalaman" style="width:80%; border-radius:15px; margin:10px 0;">
+      <p>Tuliskan cerita pengalaman hidupmu di sini. Misalnya perjalanan sekolah, organisasi, kegiatan sosial, atau pengalaman menarik lainnya.</p>
+      <p>Contoh: Saat saya mengikuti lomba ...</p>
+    </div>
+  </section>
+
+  <!-- Page 4 -->
+  <section id="page4">
+    <div class="card">
+      <h2>Halaman 4</h2>
+      <p>(Masih kosong, bisa diisi nanti)</p>
+    </div>
+  </section>
+
+</body>
+</html>

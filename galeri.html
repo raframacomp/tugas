@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>galeri raffi</title>
+  <style>
+    :root {
+      --primary: #4e73df;
+      --secondary: #1cc88a;
+      --dark: #2c3e50;
+      --light: #f7f9fc;
+      --muted: #7f8c8d;
+      --card: #ffffff;
+      --radius: 18px;
+    }
+
+    body.dark {
+      --light: #1a1c23;
+      --dark: #ecf0f1;
+      --muted: #95a5a6;
+      --card: #2c3e50;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* Tombol Toggle */
+    .toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s ease;
+      z-index: 1000;
+    }
+    .toggle-theme:hover {
+      background: #3752b2;
+      transform: scale(1.05);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      transition: background 0.3s;
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: fadeSlideDown 1s ease forwards;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    @keyframes fadeSlideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display:list-item
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s, box-shadow 0.3s;
+    }
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--primary);
+    }
+    .card-content p {
+      margin: 0;
+      font-size: 16px;
+      color: var(--dark);
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      margin-right: 10px;
+      font-weight: 500;
+      transition: background .3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+      background: #3752b2;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 40px;
+      transition: color 0.3s;
+      opacity: 0;
+      animation: fadeInFooter 1.2s ease forwards 0.8s;
+    }
+
+    @keyframes fadeInFooter {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol Dark Mode -->
+  <button class="toggle-theme" onclick="toggleTheme()">🌙 Mode Gelap</button>
+
+  <header>
+    <h1>Galeri</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="plenteng.jpg" alt="">
+      <div class="card-content">
+        <h2 align="center">Pleno Tengah OSIS SMAN 1 Bekasi Periode 2023/2024</h2>
+        <p align="center"> <b> Waktu itu, saya 
+          mewakili Sekbid 1 OSIS SMAN 1 Bekasi
+          untuk mempresentasikan program kerja ke kesiswaan,
+          para anggota OSIS, serta perwakilan anggota ekskul. </b> </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="dubac.jpg" alt="">
+      <div class="card-content">
+        <h2 align="center">Kunjungan Duta Baca ke Perpusnas</h2>
+        <p align="center"> <b> Seluruh calon Duta Baca periode 2023-2025 melakukan
+          kunjungan ke Perpustakaan Nasional yang berlokasi di Jakarta.
+          Kegiatan ini dilaksanakan dengan tujuan untuk menyelesaikan program kerja
+          Duta Baca periode 2023-2025. </b>
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="pisus.jpg" alt="">
+      <div class="card-content">
+        <h2 align="center">Regenerasi Kepengurusan Pisus Periode 2025/2026</h2>
+        <p align="center"> <b> Pada hari Jumat, tanggal 22 bulan Juli tahun 2025,
+          telah dilaksanakan regenerasi (pergantian) kepengurusan ekstrakurikuler
+        Pisus periode 2025/2026. Para BPH anggota Pisus secara resmi purna, mereka 
+        melakukan penyerahan lencana dan piagam penghargaan
+        kepada para anggota BPH yang baru sebagai bagian dari seremonial acara ini.   </b></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gym2.jpg" height="" alt="">
+      <div class="card-content">
+        <h2 align="center">Berolahraga setelah Selesai Rawat Inap dari Rumah Sakit</h2>
+        <p align="center"> <b>Setelah selesai dirawat di rumah sakit karena terdiagnosa
+          penyakit demam berdarah, beberapa hari kemudian saya langsung kembali berolahraga
+        untuk mengembalikan kebugaran fisik yang sempat menurun selama dirawat inap.
+      Beberapa olahraga yang saya lakukan diantaranya lifting, pull-up, dips, dan sejumlah
+      olahraga kalistenik lainnya. </b> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions" style="text-align:center;">
+    <a href="page2.html" class="btn"> Ke halaman sebelumnya </a>
+    <br><br>
+    <a href="index.html" class="btn"> Ke halaman utama </a>
+  </div>
+
+  <footer>
+    © 2025 Muhammad Raffi Ramadhan. All Rights Reserved.
+  </footer>
+  
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.toggle-theme');
+      if(document.body.classList.contains('dark')){
+        btn.textContent = '☀️ Mode Terang';
+      } else {
+        btn.textContent = '🌙 Mode Gelap';
+      }
+    }
+
+    // Animasi Fade-in saat scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>

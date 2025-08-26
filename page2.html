@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>info pribadi</title>
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --secondary: #00cec9;
+      --dark: #2d3436;
+      --light: #f7f9fc;
+      --muted: #636e72;
+      --card: #ffffff;
+      --radius: 18px;
+    }
+
+    body.dark {
+      --light: #1a1c23;
+      --dark: #ecf0f1;
+      --muted: #95a5a6;
+      --card: #2d3436;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+
+    /* Tombol Toggle */
+    .toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+    .toggle-theme:hover {
+      background: #4834d4;
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 1px;
+      animation: slideDown 1s ease;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      opacity: 0.9;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display:flexbox;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      transform: translateY(50px) scale(0.95);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease, background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 70%);
+      transform: rotate(25deg);
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: var(--primary);
+      position: relative;
+    }
+    .card h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+      margin: 10px auto 0;
+      border-radius: 2px;
+      animation: expand 1s ease forwards;
+    }
+    @keyframes expand {
+      from { width: 0; opacity: 0; }
+      to { width: 50px; opacity: 1; }
+    }
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--dark);
+      opacity: 0.85;
+      transition: color 0.3s;
+    }
+    .card:hover p {
+      color: var(--secondary);
+    }
+
+    .story {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px) scale(0.95);
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    .story.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .story h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease;
+    }
+    .story p {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: auto;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      margin-right: 10px;
+      font-weight: 500;
+      transition: background .3s ease, transform .3s ease;
+    }
+    .btn:hover {
+      background: #3752b2;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 40px;
+      transition: color 0.3s;
+      animation: fadeIn 3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol Dark Mode -->
+  <button class="toggle-theme" onclick="toggleTheme()">🌙 Mode Gelap</button>
+
+  <header>
+    <h1>Hobi, Minat, dan Cerita Pribadi</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>🎸 Bermusik</h2>
+      <p> <b> Bermain musik dan mendengarkannya merupakan bagian penting dari hidup saya.
+        Saya memperlakukan musik seolah-olah jantung kedua yang secara terus-menerus memompa
+        kehendak untuk terus hidup sebagaimana adanya. Saya bisa memainkan sejumlah instrumen seperti
+        gitar, drum, dan piano/keyboard. Akan tetapi, saya masih belum terlalu pandai dalam memainkan instrumen-instrumen
+        tersebut. Saya menyukai banyak genre, mulai dari jazz, rock, metal, blues, dan beberapa genre percabangan seperti
+        alternative rock, psychedelic rock, death metal, jazz fusion, dan masih banyak lagi. Saya juga belajar sedikit mengenai
+      teori musik seperti jenis-jenis mode dan scale dalam nada.</b>
+      </p>
+    </div>
+<br>
+    <div class="card">
+      <h2>📚 Membaca</h2>
+      <p> <b>Membaca buku fiksi maupun nonfiksi tetap menjadi bagian penting dari hidup saya, meskipun sudah lama saya tidak
+        membaca buku semenjak naik ke kelas 12 karena harus berfokus pada hal-hal akademik. Saya suka membaca buku apa saja
+        asalkan isi buku tersebut tidak menyesatkan dan berguna bagi saya secara praktis. Misalnya, seperti buku biografi.
+        Buku biografi membantu saya untuk mendalami proses kehidupan seseorang secara kompleks, proses dalam kehidupannya tersebut
+        bisa kita integrasikan maupun dijadikan sebagai suatu inspirasi dalam menjalani hidup. Jenis buku fiksi yang sering saya baca  
+        yaitu buku kumpulan puisi serta buku kumpulan cerpen. Isi-isi puisi serta cerpen yang saya baca tidak jarang membuat diri saya  
+        terganggu. Topik-topik yang sering diangkat oleh beberapa pujangga berpengalaman umumnya adalah topik yang tabu jika diperbincangkan
+        dalam konteks sehari-hari, seperti pembunuhan, eksploitasi manusia, penyelewangan HAM, dan topik-topik tabu lainnya.
+        Meski demikian, membaca buku dengan topik tersebut tidaklah menjadikan saya sebagai manusia bejat nan kejam yang kerjaannya
+        menyiksa orang lain. Membaca topik seperti itu membantu saya untuk lebih berempati dan memperdalam maupun memperluas
+        sudut pandang mengenai kehidupan. </b>
+      </p>
+    </div>
+<br>
+    <div class="card">
+      <h2>🏋️‍♂️ Olahraga</h2>
+      <p> <b> erolahraga juga merupakan bagian penting dari kehidupan saya. Saya biasa melakukan
+        olahraga lifting (angkat beban) dan kalistenik sebanyak 3-5 kali seminggu. Jika sedang punya banyak waktu luang, seperti saat liburan,
+        saya bisa berolahraga lifting hingga 6 kali dalam seminggu. Akan tetapi, saya hanya
+        melakukan olahraga kardio sebanyak sekali atau dua kali dalam seminggu dengan alasan agar berat badan saya
+        tidak semakin turun yang berarti tubuh saya akan terlihat lebih kecil dan kurus. </b>
+      </p>
+    </div>
+<br>
+    <div class="card">
+      <h2>✍️ Menulis</h2>
+      <p> <b> Saya pribadi suka menulis, namun saat ini sudah sangat jarang sekali memublikasikan tulisan secara online.
+        Alasannya karena menulis membutuhkan proses dan waktu yang lama, sedangkan saya masih punya banyak aktivitas
+        lainnya yang harus dikerjakan seperti belajar untuk ujian, berolahraga rutin, membantu pekerjaan rumah tangga,
+        dan lain sebagainya. Selain itu, target audiens yang saya tuju sangatlah sedikit , rasanya sangat susah untuk menemukan
+        warga negara Indonesia yang suka membaca dan mengkritik tulisan. </b>
+      </p>
+    </div>
+<br>
+    <div class="story">
+      <p> <b>Bagi saya, hidup tidak lebih dari sekadar permainan yang terkadang kurang adil. Akan tetapi, selagi hidup masih
+        memberi kita kesempatan untuk berusaha, bersenang-senang, bersedih, berhasil, gagal, tantangan, kemudahan,
+        menghabiskan waktu sendirian maupun bersama,
+        kehidupan seperti itu masihlah layak untuk dijalani.
+        Pada suatu hari, kita akan mati dan terlupakan atau bahkan diingat setelah berpuluh maupun beratus-ratus tahun lamanya.
+        Oleh karenanya, manfaatkan kesempatan untuk hidup dengan sebaik-baiknya dengan cara kita masing-masing.  </b> </p> 
+      </p>
+    </div>
+  </div>
+
+    <div class="actions" style="text-align:center;">
+    <a href="raffi.html" class="btn"> Ke halaman sebelumnya    </a> 
+    <a href="index.html" class="btn"> Ke halaman utama    </a>
+    <a href="galeri.html" class="btn"> Ke halaman berikutnya </a>
+  </div>
+
+  <footer>
+    © 2025 Muhammad Raffi Ramadhan. All Rights Reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.toggle-theme');
+      if(document.body.classList.contains('dark')){
+        btn.textContent = '☀️ Mode Terang';
+      } else {
+        btn.textContent = '🌙 Mode Gelap';
+      }
+    }
+
+    // Animasi saat scroll
+    const cards = document.querySelectorAll('.card, .story');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>

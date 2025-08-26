@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Spesial untuk Pacarku</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, #fff1f2, #ffe4e6);
+            overflow-x: hidden;
+        }
+        
+        .title {
+            font-family: 'Pacifico', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .heart {
+            animation: float 4s ease-in-out infinite;
+            position: absolute;
+            opacity: 0.6;
+        }
+        
+        .balloon {
+            animation: float 6s ease-in-out infinite;
+            position: absolute;
+        }
+        
+        .confetti {
+            position: absolute;
+            opacity: 0.8;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .photo-frame {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .photo-frame:hover {
+            transform: scale(1.03);
+        }
+        
+        .message-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(252, 161, 178, 0.3);
+        }
+        
+        .candle {
+            animation: flicker 2s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Floating decoration elements -->
+    <div id="hearts-container"></div>
+    <div id="balloons-container"></div>
+    <div id="confetti-container"></div>
+    
+    <div class="max-w-4xl w-full">
+        <!-- Header with title -->
+        <div class="text-center mb-8">
+            <h1 class="title text-5xl md:text-6xl text-rose-600 mb-4" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;">Happy Birthday Audrey!</h1>
+            <h2 class="text-2xl text-rose-500 font-medium">Untuk Kamu yang Tersayang</h2>
+        </div>
+        
+        <!-- Photo section -->
+        <div class="flex justify-center mb-10">
+            <div class="photo-frame overflow-hidden w-full max-w-md h-80 bg-rose-100 flex items-center justify-center">
+                <img src="image-url-here.jpg" alt="Foto kita berdua" class="w-full h-full object-cover" />
+            </div>
+        </div>
+        
+        <!-- Birthday message -->
+        <div class="message-box p-6 md:p-8 mb-10">
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <!-- Birthday cake with candles -->
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9ad8a588-3827-46d9-af9d-fb93db4bce7a.png" alt="Kue ulang tahun dengan lilin menyala" class="w-32 h-16 object-contain" />
+                        <div class="candle absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4">
+                            <div class="w-3 h-16 bg-gradient-to-b from-yellow-400 to-orange-500 rounded-sm mx-auto"></div>
+                            <div class="w-6 h-6 bg-yellow-200 rounded-full mt-2 mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-bold text-rose-600 mb-4">Untuk Kamu yang Tercinta,</h3>
+                
+                <div class="text-rose-700 text-lg leading-relaxed text-left">
+                    <p class="mb-4">🎀 Happy birthday to the most wonderful person I know!</p>
+                    
+                    <p class="mb-4">💖 May your day be filled with happiness and love.</p>
+                    
+                    <p class="mb-4">🎂 Here's to another year of amazing memories together.</p>
+                    
+                    <p class="font-bold">Forever yours ❤️</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memory gallery -->
+        <div class="mb-10">
+            <h3 class="text-2xl text-rose-600 font-bold mb-6 text-center">Kenangan Indah Kita</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://example.com/memories/beach-day.jpg" alt="Our beach vacation" class="w-full h-full object-cover" />
+                </div>
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/854dec05-11a6-4f42-83ff-64e037812115.png" alt="Kita tertawa bersama di kafe favorit kita" class="w-full h-full object-cover" />
+                </div>
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37e0e3cc-bc0c-4909-b638-7edfa23b95c9.png" alt="Foto kita berdua dengan pose lucu saat liburan" class="w-full h-full object-cover" />
+                </div>
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/730c2491-ac4f-45b9-bbbc-51a268a8932b.png" alt="Kita berpegangan tangan di taman bunga" class="w-full h-full object-cover" />
+                </div>
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bedd5912-209e-412c-a5d3-2960b717c909.png" alt="Momen ketika pertama kali aku mengungkapkan perasaanku padamu" class="w-full h-full object-cover" />
+                </div>
+                <div class="h-40 bg-rose-100 rounded-xl overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fffbe50d-9de9-4860-b431-0f03ca188be8.png" alt="Kita berfoto bersama dengan kostum matching di acara khusus" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive gift box -->
+        <div class="flex justify-center mb-10">
+            <button id="gift-button" class="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                <span class="z-10 relative">Open Your Gift!</span>
+                <div class="absolute top-0 left-0 w-full h-full bg-rose-300 rounded-full opacity-0 hover:opacity-50 transition-opacity"></div>
+            </button>
+        </div>
+        
+        <!-- Surprise message (hidden until gift button is clicked) -->
+        <div id="surprise-message" class="hidden message-box p-6 text-center mb-10">
+            <h3 class="text-2xl text-pink-600 font-bold mb-4">💝 SURPRISE! 💝</h3>
+            <p class="text-lg mb-4">Aku sudah menyiapkan sesuatu yang spesial untukmu hari ini!</p>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c087726-bb8f-4db1-a69a-1bfa737d22e7.png" alt="Sebuah hadiah spesial dibungkus dengan kertas merah muda dan pita emas" class="w-full max-w-xs mx-auto mb-4 rounded-lg" />
+            <p class="font-medium">Ayo buka hadiahnya saat kita bertemu nanti! Aku tidak sabar melihat senyuman manismu! 😊</p>
+        </div>
+        
+        <!-- Countdown to birthday date -->
+        <div class="message-box p-6 text-center mb-4">
+            <h3 class="text-xl font-bold text-rose-600 mb-2">Hitungan Mundur untuk Hari Spesialmu!</h3>
+            <div class="flex justify-center space-x-2 md:space-x-4">
+                <div class="bg-white rounded-lg p-2 w-16">
+                    <div class="text-2xl font-bold text-rose-600" id="days">00</div>
+                    <div class="text-xs text-rose-400">Hari</div>
+                </div>
+                <div class="bg-white rounded-lg p-2 w-16">
+                    <div class="text-2xl font-bold text-rose-600" id="hours">00</div>
+                    <div class="text-xs text-rose-400">Jam</div>
+                </div>
+                <div class="bg-white rounded-lg p-2 w-16">
+                    <div class="text-2xl font-bold text-rose-600" id="minutes">00</div>
+                    <div class="text-xs text-rose-400">Menit</div>
+                </div>
+                <div class="bg-white rounded-lg p-2 w-16">
+                    <div class="text-2xl font-bold text-rose-600" id="seconds">00</div>
+                    <div class="text-xs text-rose-400">Detik</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final note -->
+        <div class="text-center text-rose-600 text-sm mb-4">
+            <p>Custom made just for you with love ❤️</p>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const colors = ['#fb7185', '#f43f5e', '#e11d48', '#fda4af'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `${Math.random() * 100}vh`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create floating balloons
+        function createBalloons() {
+            const container = document.getElementById('balloons-container');
+            const colors = ['#a5b4fc', '#fbbf24', '#34d399', '#f472b6', '#60a5fa'];
+            const emojis = ['🎈', '🎉', '🎊', '🎀', '🎁'];
+            
+            for (let i = 0; i < 15; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                balloon.style.color = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.fontSize = `${Math.random() * 30 + 20}px`;
+                balloon.style.left = `${Math.random() * 100}vw`;
+                balloon.style.top = `${Math.random() * 100 + 100}vh`;
+                balloon.style.animationDelay = `${Math.random() * 8}s`;
+                
+                container.appendChild(balloon);
+            }
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#f59e0b', '#10b981', '#3b82f6', '#ef4444', '#8b5cf6'];
+            const shapes = ['❄️', '✨', '⭐', '🌟'];
+            
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+                confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.fontSize = `${Math.random() * 15 + 5}px`;
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = `${Math.random() * 100}vh`;
+                confetti.style.animation = `float ${Math.random() * 3 + 2}s ease-in-out infinite`;
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Gift button interaction
+        document.getElementById('gift-button').addEventListener('click', function() {
+            this.classList.add('hidden');
+            document.getElementById('surprise-message').classList.remove('hidden');
+            
+            // Create burst effect
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💖';
+                heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `${Math.random() * 100}vh`;
+                heart.style.animation = `float ${Math.random() * 3 + 1}s ease-in-out forwards`;
+                
+                document.body.appendChild(heart);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+        });
+        
+        // Countdown to birthday (update the date to match your girlfriend's birthday)
+        function updateCountdown() {
+            // Set the birthday date (month is 0-indexed, so 0 = January, 11 = December)
+            const birthdayDate = new Date();
+            birthdayDate.setMonth(6); // July (0-11 where 0=Jan)
+            birthdayDate.setDate(7); // Birthday date
+            birthdayDate.setHours(0, 0, 0, 0);
+            
+            const now = new Date();
+            
+            // If birthday has passed this year, set for next year
+            if (now > birthdayDate) {
+                birthdayDate.setFullYear(birthdayDate.getFullYear() + 1);
+            }
+            
+            const diff = birthdayDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initialize all elements
+        window.addEventListener('load', function() {
+            createHearts();
+            createBalloons();
+            createConfetti();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
+
