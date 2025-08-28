@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 1 - Biodata Rafael</title>
+  
+<style>
+.hero-button{
+  display:inline-block; padding:34px 90px; border-radius:14px;
+  background:linear-gradient(to bottom,#66b2ff,#004080);
+  color:#fff; font-size:28px; font-weight:bold; letter-spacing:1px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.45), inset 0 2px 6px rgba(255,255,255,0.25);
+
+  /* animasi welcome */
+  animation: popIn 2s ease, glow 3s ease-in-out infinite;
+}
+.hero-sub{ margin-top:10px; font-size:14px; opacity:.9; letter-spacing:3px;color:#fff }
+.center-hero{ text-align:center; margin-top:150px; }
+  
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('image rafael/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* tombol navigasi */
+.nav a {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #66ccff, #0044cc);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.nav a.active {
+  background: linear-gradient(to bottom, #99ddff, #0066ff);
+}
+
+/* box solid dengan efek 3D */
+.solid-box {
+  display: inline-block;
+  padding: 30px 60px;
+  background: #ffffff; /* solid putih */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 2px 6px rgba(255,255,255,0.6);
+  color: #222;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+img.round {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Animasi pesawat pixel */
+.plane {
+  position: absolute;
+  top: 80px;
+  left: -100px;
+  width: 60px;
+  height: 60px;
+  background: url("image rafael/plane-pixel.png") no-repeat center/contain;
+  animation: fly 12s linear infinite;
+  z-index: 5;
+}
+@keyframes fly {
+  0%   { left: -100px; top: 80px; transform: scale(1) rotate(0deg);}
+  50%  { left: calc(100% + 100px); top: 160px; transform: scale(1.2) rotate(10deg);}
+  100% { left: -100px; top: 80px; transform: scale(1) rotate(0deg);}
+}
+
+/* Animasi Welcome box */
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.5) translateY(-50px); }
+  60%  { opacity: 1; transform: scale(1.05) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes glow {
+  0%, 100% { box-shadow:0 10px 24px rgba(0,0,0,0.45), 0 0 15px rgba(102,178,255,0.6); }
+  50% { box-shadow:0 10px 28px rgba(0,0,0,0.6), 0 0 25px rgba(102,178,255,1); }
+}
+
+/* Music button */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+.music-player img {
+  width: 100%;
+  height: 100%;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused; /* default berhenti */
+}
+.music-player.playing img {
+  animation-play-state: running; /* muter kalau play */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+}
+</style>
+
+</head>
+<body>
+  <!-- Pesawat pixel -->
+  <div class="plane"></div>
+
+  <div class="center-hero">
+    <div class="hero-button">SELAMAT DATANG DI WEBSITE RAFAEL</div>
+    <div class="hero-sub">MENGENAL LEBIH BANYAK TENTANG WEBSITE</div>
+  </div>
+  <p style="margin-top:20px;font-size:14px;">Silakan pilih halaman di bawah untuk melanjutkan</p>
+ <div class="nav" style="margin-top:60px;">
+    <a href="Rafael 1.html" class="active">Page 1</a>
+    <a href="rafael 2.html">Page 2</a>
+    <a href="Rafael 3.html">Page 3</a>
+    <a href="Rafael 4.html">Page 4</a>
+  </div>
+
+  <!-- Music -->
+  <div class="music-player" id="musicBtn">
+    <img src="image rafael/music-logo.png" alt="Music Logo">
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="image rafael/rafael1.jpg" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar musik.
+  </audio>
+
+<script>
+  const musicBtn = document.getElementById("musicBtn");
+  const bgMusic = document.getElementById("bgMusic");
+
+  musicBtn.addEventListener("click", function() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicBtn.classList.add("playing");
+    } else {
+      bgMusic.pause();
+      musicBtn.classList.remove("playing");
+    }
+  });
+</script>
+</body>
+</html>
